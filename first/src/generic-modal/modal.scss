@@ -1,0 +1,48 @@
+@import "./../styles/mixin.scss";
+
+$blue: #89b69e;
+
+.close {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  &:hover {
+    &::before,
+    &::after {
+      background: $blue;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+  }
+  &::before {
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    @include transform(rotate(-45deg));
+  }
+  &.fat {
+    &::before,
+    &::after {
+      border-radius: 100%;
+    }
+  }
+  &.thick {
+    &::before,
+    &::after {
+      height: 4px;
+      margin-top: -2px;
+    }
+  }
+}

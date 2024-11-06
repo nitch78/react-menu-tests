@@ -1,0 +1,164 @@
+@use "sass:list";
+@use "sass:color";
+
+@import "./../styles/mixin.scss";
+@import "./../styles/variables";
+
+$max-width-desktop: 1000px;
+$menu-item-min-width: 200px;
+$menu-item-height: 80px;
+$total-menu-number: 5;
+
+@for $i from 1 through $total-menu-number {
+  .menus li:nth-child(#{$i}) {
+    &:hover ul div {
+      @include transform(translate(0, 0));
+    }
+    &:hover ~ .slide-bar,
+    &.active ~ .slide-bar {
+      @include transform(translate(#{(-1 + $i) * $menu-item-min-width}, 0));
+      background-color: list.nth($menu-ordered-colors, $i);
+    }
+  }
+}
+
+.menus {
+  list-style: none;
+  max-width: $max-width-desktop;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 60%;
+  position: relative;
+
+  > li {
+    @include flex-all-centered();
+
+    height: $menu-item-height;
+    flex: 1 1 0;
+    color: black;
+    min-width: $menu-item-min-width;
+    z-index: 1;
+
+    &.blue {
+      &:hover,
+      &.active {
+        color: color.adjust($blueColor, $lightness: -20%);
+      }
+    }
+    &.red {
+      &:hover,
+      &.active {
+        color: color.adjust($redColor, $lightness: -20%);
+      }
+    }
+    &.orange {
+      &:hover,
+      &.active {
+        color: color.adjust($orangeColor, $lightness: -20%);
+      }
+    }
+    &.purple {
+      &:hover,
+      &.active {
+        color: color.adjust($purpleColor, $lightness: -20%);
+      }
+    }
+    &.green {
+      &:hover,
+      &.active {
+        color: color.adjust($greenColor, $lightness: -20%);
+      }
+    }
+
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &:hover .sub-menu {
+      height: unset;
+    }
+  }
+
+  .sub-menu {
+    @include flex-all-centered();
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    top: $menu-item-height;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 3px;
+    height: 0;
+    > div {
+      @include transform(translate(0, -100%));
+      @include transition(all 0.5s 0.1s);
+      position: relative;
+      width: inherit;
+
+      > li {
+        width: 100%;
+        padding: 0;
+        @include flex-all-centered;
+        color: white;
+        font-size: 15px;
+        font-weight: 400;
+        &.blue {
+          background-color: $blueColor;
+          &:hover {
+            background-color: color.adjust($blueColor, $lightness: 5%);
+          }
+        }
+        &.red {
+          background-color: $redColor;
+          &:hover {
+            background-color: color.adjust($redColor, $lightness: 5%);
+          }
+        }
+        &.orange {
+          background-color: $orangeColor;
+          &:hover {
+            background-color: color.adjust($orangeColor, $lightness: 5%);
+          }
+        }
+        &.purple {
+          background-color: $purpleColor;
+
+          &:hover {
+            background-color: color.adjust($purpleColor, $lightness: 5%);
+          }
+        }
+        &.green {
+          background-color: $greenColor;
+          &:hover {
+            background-color: color.adjust($greenColor, $lightness: 5%);
+          }
+        }
+
+        > a {
+          padding: 10px 0;
+          @include flex-all-centered;
+          height: inherit;
+          width: inherit;
+        }
+      }
+    }
+  }
+
+  .slide-bar {
+    height: 5px;
+    position: absolute;
+    bottom: 5px;
+    width: $menu-item-min-width;
+    z-index: 0;
+    @include transition(all 0.35s cubic-bezier(0, 0, 0.58, 1));
+  }
+}

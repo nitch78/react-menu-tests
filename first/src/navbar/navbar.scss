@@ -1,0 +1,18 @@
+.navbar-desktop {
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 0 30px;
+  box-shadow: 0px 0px 20px 4px rgb(0 0 0 / 6%);
+
+  // -------------------------  Colored-navbar
+  //   @for $i from 1 through list.length($menu-ordered-colors) {
+  //     &.color-#{$i - 1} {
+  //       background-color: color.adjust(
+  //         list.nth($menu-ordered-colors, $i),
+  //         $lightness: 30%
+  //       );
+  //     }
+  //   }
+}

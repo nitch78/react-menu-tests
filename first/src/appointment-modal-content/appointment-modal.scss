@@ -1,0 +1,63 @@
+@use "sass:color";
+@import "./../styles/mixin.scss";
+@import "./../styles/variables.scss";
+
+.appointment-modal-container {
+  padding: 40px 30px 30px 30px;
+  @include flex-all-centered;
+  flex-wrap: wrap;
+  margin: -20px -10px;
+
+  h3 {
+    font-weight: 400;
+    margin: 0 0 30px;
+    font-size: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+  }
+
+  .rdv-button {
+    border-radius: 3px;
+    margin: 10px 10px;
+    border: 1px solid;
+    transition: all 0.25s;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 15px 20px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &-orange {
+      border-color: $orangeColor;
+      color: color.adjust($orangeColor, $lightness: -20%);
+    }
+    &-red {
+      border-color: $redColor;
+      color: color.adjust($redColor, $lightness: -20%);
+    }
+    &-blue {
+      border-color: $blueColor;
+      color: color.adjust($blueColor, $lightness: -20%);
+    }
+    &-green {
+      border-color: $greenColor;
+      color: color.adjust($greenColor, $lightness: -20%);
+    }
+    &-purple {
+      border-color: $purpleColor;
+      color: color.adjust($purpleColor, $lightness: -20%);
+    }
+  }
+
+  .rdv-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 4px rgb(0 0 0 / 6%);
+    font-weight: 500;
+  }
+
+  .rdv-button:active {
+    transform: scale(1.025);
+  }
+}

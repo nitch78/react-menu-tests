@@ -1,0 +1,17 @@
+$redColor: rgb(236, 72, 72);
+$greenColor: rgb(77, 185, 77);
+$orangeColor: rgb(248, 165, 70);
+$purpleColor: rgb(168, 74, 168);
+$blueColor: rgb(105, 105, 240);
+
+$menu-ordered-colors: (
+  $redColor,
+  $greenColor,
+  $orangeColor,
+  $purpleColor,
+  $blueColor
+);
+
+:export {
+  menuColorList: $menu-ordered-colors;
+}
