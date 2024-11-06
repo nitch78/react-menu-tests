@@ -15,7 +15,7 @@ export default function Navbar({ children }) {
           <AppointmentModalContent />
         </Modal>
       )}
-      <div className={`navbar-desktop`}>
+      <div className={`navbar-desktop navbar`}>
         <AppointmentButton onClickRDV={() => setIsModalOpen(true)} />
         {children}
       </div>
