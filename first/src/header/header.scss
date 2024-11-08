@@ -28,6 +28,7 @@ $min-header-height : 600px;
     position : absolute;
     bottom : 0;
     transform: translateY(100%);
+    z-index: -1;
     .blue {
       fill: $blueColor;
     }
@@ -49,13 +50,33 @@ $min-header-height : 600px;
     padding :  40px;
     position:relative;
     height :100%;
-    h1 {
-      position : absolute;
-      transform: translateY(-200%);
-      top : 50%;
+    display : flex;
+    justify-content: space-around;
 
+    .title-container {
+      width : 50%;
       color : white;
       font-size : 50px
+    }
+
+    img {
+      margin : auto 0;
+      width : 400px;
+      height: 250px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.192);
+      z-index: 0;
+    }
+
+    h1 {
+      font-size : 50px;
+      // text-transform: uppercase;
+    }
+
+    h3 {
+      font-size :20px;
+      font-family: "Montserrat", sans-serif;
+      font-weight : 400;
+    }
   }
-}
 }

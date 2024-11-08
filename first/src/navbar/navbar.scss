@@ -1,5 +1,5 @@
 .navbar {
-  transition: all 0.35s;
+  transition: all 0.15s ease-out;
   &.scrolled {
     background-color: white;
     position: fixed;

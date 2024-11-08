@@ -41,7 +41,7 @@ export const menuData = [
   },
   {
     color: "purple",
-    label: "Psychomot'",
+    label: "Psychomotricité",
     hasRDV: true,
     RDVPath: "https://theuselessweb.com/",
     subMenu: [
@@ -65,7 +65,7 @@ export const menuData = [
   },
   {
     color: "blue",
-    label: "Aller plus loin ESS",
+    label: "Aller + loin ESS",
     subMenu: [],
   },
 ];
