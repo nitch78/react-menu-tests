@@ -1,6 +1,13 @@
 @import "./../styles/variables";
+
+$header-height : 50vh;
+$min-header-height : 600px;
+
+
 .site-header {
-  height: 90vh;
+  position:relative;
+  height: $header-height;
+  // min-height: $min-header-height;
   &-blue {
     background-color: $blueColor;
   }
@@ -16,4 +23,39 @@
   &-green {
     background-color: $greenColor;
   }
+
+  > svg {
+    position : absolute;
+    bottom : 0;
+    transform: translateY(100%);
+    .blue {
+      fill: $blueColor;
+    }
+    .red {
+      fill: $redColor;
+    }
+    .orange {
+      fill: $orangeColor;
+    }
+    .purple {
+      fill: $purpleColor;
+    }
+    .green {
+      fill: $greenColor;
+    }
+  }
+
+  &-content {
+    padding :  40px;
+    position:relative;
+    height :100%;
+    h1 {
+      position : absolute;
+      transform: translateY(-200%);
+      top : 50%;
+
+      color : white;
+      font-size : 50px
+  }
+}
 }
