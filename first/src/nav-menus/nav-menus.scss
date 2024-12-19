@@ -19,7 +19,7 @@ $total-menu-number: 5;
     }
     &:hover ~ .slide-bar,
     &.active ~ .slide-bar {
-      @include transform(translate(#{(-1 + $i) * $menu-item-min-width}, 0));
+      @include transform(translate(#{(-1 + $i) * (100%)}, 0));
       background-color: white;
     }
   }
@@ -27,7 +27,6 @@ $total-menu-number: 5;
   .scrolled .menus li:nth-child(#{$i}) {
     &:hover ~ .slide-bar,
     &.active ~ .slide-bar {
-      @include transform(translate(#{(-1 + $i) * $menu-item-min-width}, 0));
       background-color: list.nth($menu-ordered-colors, $i);
     }
   }
@@ -37,31 +36,31 @@ $total-menu-number: 5;
   &.blue {
     &:hover,
     &.active {
-      color: color.adjust($blueColor, $lightness: -20%);
+      color: color.adjust($ESSColor, $lightness: -20%);
     }
   }
   &.red {
     &:hover,
     &.active {
-      color: color.adjust($redColor, $lightness: -20%);
+      color: color.adjust($mainColor, $lightness: -20%);
     }
   }
   &.orange {
     &:hover,
     &.active {
-      color: color.adjust($orangeColor, $lightness: -20%);
+      color: color.adjust($physiotherapyColor, $lightness: -20%);
     }
   }
   &.purple {
     &:hover,
     &.active {
-      color: color.adjust($purpleColor, $lightness: -20%);
+      color: color.adjust($psychoMotColor, $lightness: -20%);
     }
   }
   &.green {
     &:hover,
     &.active {
-      color: color.adjust($greenColor, $lightness: -20%);
+      color: color.adjust($infirmaryColor, $lightness: -20%);
     }
   }
 }
@@ -73,7 +72,7 @@ $total-menu-number: 5;
   margin-top: 0;
   margin-bottom: 10px;
   padding: 0;
-  // width: 60%;
+  width: 60%;
   position: relative;
 
   > li {
@@ -81,7 +80,7 @@ $total-menu-number: 5;
 
     height: $menu-item-height;
     flex: 1 1 0;
-    color: rgba(0, 0, 0, 0.473);
+    color: rgba(0, 0, 0, 0.65);
     min-width: $menu-item-min-width;
     z-index: 1;
 
@@ -97,6 +96,9 @@ $total-menu-number: 5;
     a {
       text-decoration: none;
       color: inherit;
+      height: inherit;
+      width: inherit;
+      @include flex-all-centered();
     }
 
     &:hover .sub-menu {
@@ -116,10 +118,10 @@ $total-menu-number: 5;
     flex-direction: column;
     border-radius: 5px;
     height: 0;
-    transition: box-shadow 1s ease-in-out;
+    @include transition(0.5s ease-in);
     > div {
       @include transform(translate(0, -100%));
-      @include transition(all 0.5s 0.1s);
+      @include transition(all 0.25s ease-in);
       position: relative;
       width: inherit;
       > li {
@@ -129,35 +131,39 @@ $total-menu-number: 5;
         color: white;
         font-size: 15px;
         font-weight: 400;
-        &.blue {
-          background-color: color.adjust($blueColor, $lightness: 3%);
-          &:hover {
-            background-color: color.adjust($blueColor, $lightness: 7%);
+        &.blue a {
+          background-color: color.adjust($ESSColor, $lightness: 3%);
+          &:hover,
+          &.active {
+            background-color: color.adjust($ESSColor, $lightness: 7%);
           }
         }
-        &.red {
-          background-color: color.adjust($redColor, $lightness: 3%);
-          &:hover {
-            background-color: color.adjust($redColor, $lightness: 7%);
+        &.red a {
+          background-color: color.adjust($mainColor, $lightness: 3%);
+          &:hover,
+          &.active {
+            background-color: color.adjust($mainColor, $lightness: 7%);
           }
         }
-        &.orange {
-          background-color: color.adjust($orangeColor, $lightness: 3%);
-          &:hover {
-            background-color: color.adjust($orangeColor, $lightness: 7%);
+        &.orange a {
+          background-color: color.adjust($physiotherapyColor, $lightness: 3%);
+          &:hover,
+          &.active {
+            background-color: color.adjust($physiotherapyColor, $lightness: 7%);
           }
         }
-        &.purple {
-          background-color: color.adjust($purpleColor, $lightness: 3%);
-
-          &:hover {
-            background-color: color.adjust($purpleColor, $lightness: 7%);
+        &.purple a {
+          background-color: color.adjust($psychoMotColor, $lightness: 3%);
+          &:hover,
+          &.active {
+            background-color: color.adjust($psychoMotColor, $lightness: 7%);
           }
         }
-        &.green {
-          background-color: color.adjust($greenColor, $lightness: 3%);
-          &:hover {
-            background-color: color.adjust($greenColor, $lightness: 7%);
+        &.green a {
+          background-color: color.adjust($infirmaryColor, $lightness: 3%);
+          &:hover,
+          &.active {
+            background-color: color.adjust($infirmaryColor, $lightness: 7%);
           }
         }
 
@@ -175,7 +181,8 @@ $total-menu-number: 5;
     height: 5px;
     position: absolute;
     bottom: 5px;
-    width: $menu-item-min-width;
+    min-width: $menu-item-min-width;
+    width: calc(100% / $total-menu-number);
     z-index: 0;
     @include transition(all 0.35s cubic-bezier(0, 0, 0.58, 1));
   }

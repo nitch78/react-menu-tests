@@ -1,82 +1,77 @@
 @import "./../styles/variables";
 
-$header-height : 50vh;
-$min-header-height : 600px;
-
-
 .site-header {
-  position:relative;
-  height: $header-height;
-  // min-height: $min-header-height;
+  position: relative;
+  width: 100%;
   &-blue {
-    background-color: $blueColor;
+    background-color: $ESSColor;
   }
   &-red {
-    background-color: $redColor;
+    background-color: $mainColor;
   }
   &-orange {
-    background-color: $orangeColor;
+    background-color: $physiotherapyColor;
   }
   &-purple {
-    background-color: $purpleColor;
+    background-color: $psychoMotColor;
   }
   &-green {
-    background-color: $greenColor;
+    background-color: $infirmaryColor;
   }
 
   > svg {
-    position : absolute;
-    bottom : 0;
-    transform: translateY(100%);
+    position: absolute;
+    bottom: 0;
+    transform: translateY(calc(100% - 2px));
     z-index: -1;
     .blue {
-      fill: $blueColor;
+      fill: $ESSColor;
     }
     .red {
-      fill: $redColor;
+      fill: $mainColor;
     }
     .orange {
-      fill: $orangeColor;
+      fill: $physiotherapyColor;
     }
     .purple {
-      fill: $purpleColor;
+      fill: $psychoMotColor;
     }
     .green {
-      fill: $greenColor;
+      fill: $infirmaryColor;
     }
   }
 
   &-content {
-    padding :  40px;
-    position:relative;
-    height :100%;
-    display : flex;
+    padding: 40px;
+    position: relative;
+    height: 100%;
+    display: flex;
     justify-content: space-around;
 
     .title-container {
-      width : 50%;
-      color : white;
-      font-size : 50px
+      width: 50%;
+      color: white;
+      font-size: 50px;
     }
 
     img {
-      margin : auto 0;
-      width : 400px;
-      height: 250px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.192);
+      margin: auto 0;
+      width: 500px;
+      height: 330px;
+      border-radius: 1px;
+      box-shadow: 13px 13px 0px 0px rgb(0 0 0 / 43%);
       z-index: 0;
     }
 
     h1 {
-      font-size : 50px;
+      font-size: 50px;
       // text-transform: uppercase;
     }
 
     h3 {
-      font-size :20px;
+      font-size: 20px;
       font-family: "Montserrat", sans-serif;
-      font-weight : 400;
+      font-weight: 400;
     }
   }
 }

@@ -1,15 +1,15 @@
-$redColor: #ec4848;
-$greenColor: rgb(77, 185, 77);
-$orangeColor: rgb(248, 165, 70);
-$purpleColor: rgb(168, 74, 168);
-$blueColor: rgb(105, 105, 240);
+$mainColor: #085c54;
+$infirmaryColor: #247380;
+$physiotherapyColor: #335f95;
+$psychoMotColor: #a34828;
+$ESSColor: #d1711f;
 
 $menu-ordered-colors: (
-  $redColor,
-  $greenColor,
-  $orangeColor,
-  $purpleColor,
-  $blueColor
+  $mainColor,
+  $infirmaryColor,
+  $physiotherapyColor,
+  $psychoMotColor,
+  $ESSColor
 );
 
 :export {

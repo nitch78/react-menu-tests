@@ -1,0 +1,120 @@
+@use "sass:color";
+@import "./../styles/mixin.scss";
+@import "./../styles/variables.scss";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #f5f5f5;
+  margin-top: auto;
+  &-map-contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    max-height: 450px;
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #888;
+    }
+  }
+
+  .map-container {
+    flex: 1 0;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.295);
+    max-width: 1000px;
+    iframe {
+      flex: 1;
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      border: none;
+    }
+  }
+
+  .contact-info {
+    margin: 0 0 0 70px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 0.25;
+  }
+
+  .contact-info li {
+    margin-bottom: 1rem;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-info h4 {
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+  }
+
+  .contact-info li p {
+    margin: 0 0 3px 0;
+    color: #888;
+    display: inline-flex;
+    align-items: center;
+
+    span {
+      color: #666;
+      margin-right: 10px;
+    }
+  }
+  .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 0.05rem;
+    color: #888;
+    font-size: 0.8rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .infirmary {
+    color: $infirmaryColor;
+
+    a {
+      color: darken($infirmaryColor, 20%);
+    }
+    a:hover {
+      color: $infirmaryColor;
+    }
+  }
+
+  .psychoMot {
+    color: $psychoMotColor;
+
+    a {
+      color: darken($psychoMotColor, 20%);
+    }
+    a:hover {
+      color: $psychoMotColor;
+    }
+  }
+
+  .physiotherapy {
+    color: $physiotherapyColor;
+
+    a {
+      color: darken($physiotherapyColor, 20%);
+    }
+    a:hover {
+      color: $physiotherapyColor;
+    }
+  }
+
+  .icon {
+    margin-right: 5px;
+  }
+}

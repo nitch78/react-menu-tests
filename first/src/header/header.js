@@ -1,29 +1,27 @@
+import { useLocation } from "react-router-dom";
 import "./header.scss";
 
-export default function SiteHeader({ color, children }) {
+export default function SiteHeader({ color, headerData, children }) {
+  const location = useLocation();
+
+  const data =
+    headerData.subMenu?.find(
+      (x) => x.path === location.pathname.substring(1)
+    ) ?? headerData;
+
   return (
     <header className={`site-header-${color} site-header`}>
       {children}
       <div className="site-header-content">
         <div className="title-container">
-          <h1>Le titre de cette page</h1>
-          {color === "red" && (
-            <h3>Petit sous titre qui pourrait etre un paragraphe</h3>
-          )}
-          {color === "orange" && (
-            <h3>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              tincidunt mollis nisl, at interdum sem. Duis iaculis ex ut
-              malesuada posuere. Integer non egestas ante, nec eleifend massa.
-              Integer vel purus iaculis, mattis lorem sed, interdum nunc.
-              Aliquam commodo vestibulum nulla, ut elementum sapien lacinia a.
-            </h3>
-          )}
+          <h1>{data.pageTitle}</h1>
+          <h3>{data.pageDescription}</h3>
         </div>
+        <div> </div>
+        <img src={data.imgPath} alt="lorem picsum img" />
 
-        <img src="https://picsum.photos/400/250" alt="lorem picsum img"></img>
+        {/* <img src="https://picsum.photos/500/330" alt="lorem picsum img"></img> */}
       </div>
-      {/* https://getwaves.io/ */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           className={color}

@@ -4,7 +4,7 @@ import "./modal.scss";
 function Modal({ children, onClose }) {
   return (
     <div style={styles.overlay} onClick={onClose}>
-      <div style={styles.modal}>
+      <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
         {children}
         <button style={styles.closeButton} onClick={onClose}>
           <span className="close fat thick"></span>
